@@ -2,8 +2,8 @@
 
 ## Team
 
-Pierre Lacoste
-Alexis Chesneau
-Victor Fabier
-Thibaut Resse
+Pierre Lacoste,
+Alexis Chesneau,
+Victor Fabier,
+Thibaut Resse,
 Samuel Faber
