@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 export default function Layout({ children }) {
   return (
     <>
-      <main className="h-full overflow-y-auto">{children}</main>
+      <main className="bg-connect bg-no-repeat bg-right h-full overflow-y-auto">
+        {children}
+      </main>
     </>
   );
 }
