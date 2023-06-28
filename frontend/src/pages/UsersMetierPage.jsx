@@ -15,7 +15,7 @@ export default function UsersMetierPage() {
       </div>
 
       <img
-        src="/assets/images/phone-flow.jpg"
+        src="/assets/images/phone-flow.png"
         alt="phone-flow"
         className="relative right-40"
       />
