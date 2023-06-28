@@ -4,10 +4,10 @@ import PageConnexion from "./pages/PageConnexion";
 import LayoutMain from "./layouts/LayoutMain";
 import LayoutConnect from "./layouts/LayoutConnect";
 import UsersMetierPage from "./pages/UsersMetierPage";
-
+import CaracteristiquesPage from './pages/CaracteristiquesPage';
+import Model from "./components/Model";
 import Page404 from "./pages/Page404";
 import "./App.css";
-import Model from "./components/Model";
 
 function App() {
   const location = useLocation();
@@ -18,6 +18,10 @@ function App() {
       <Routes>
         <Route path="/app/" element={<UsersMetierPage />} />
         <Route path="/app/modele" element={<Model />} />
+        <Route
+          path="/app/caracteristiques"
+          element={<CaracteristiquesPage />}
+        />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </LayoutMain>
