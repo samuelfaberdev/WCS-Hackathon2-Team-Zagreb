@@ -13,6 +13,7 @@ import Model from "./pages/Model";
 
 // import de la 404
 import Page404 from "./pages/Page404";
+import PageNouveauMotDePasse from "./pages/PageNouveauMotDePasse";
 
 // import du CSS
 import "./App.css";
@@ -38,6 +39,7 @@ function App() {
     // Routes de connexion et oublie mot de passe
     <LayoutConnect>
       <Routes>
+      <Route path="/nouveau-motdepasse" element={<PageNouveauMotDePasse />} />
       <Route path="/renitialiser" element={<PageMotDePasseOublier />} />
         <Route path="/" element={<PageConnexion />} />
         <Route path="*" element={<Page404 />} />
