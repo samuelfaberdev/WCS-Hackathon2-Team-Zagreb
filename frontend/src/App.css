@@ -3,19 +3,21 @@
 @tailwind utilities;
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
+
 @font-face {
-    /* Font de test à voir si on change pour celle du Figma */
-    font-family: "Raleway";
-    src: url("/fonts/Raleway-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  /* Font de test à voir si on change pour celle du Figma */
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @layer utilities {
-    /* Mettre ici les class personnalisées comme dans du CSS classique */
+  /* Mettre ici les class personnalisées comme dans du CSS classique */
 }
