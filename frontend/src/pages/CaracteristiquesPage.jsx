@@ -62,36 +62,60 @@ export default function CaracteristiquesPage() {
               </select>
             </div>
           </div>
-          <div className="flex flex-col justify-around items-center mt-20">
-            <p className="font-bold">Capacité de stockage</p>
-            <div>
-              <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                8 Go
-              </button>
-              <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                16 Go
-              </button>
-              <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                32 Go
-              </button>
+          <div>
+            <div className="flex flex-col justify-around items-center mt-10">
+              <p className="font-bold mb-2">Capacité de stockage</p>
+              <div>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8 mb-2">
+                  8 Go
+                </button>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  16 Go
+                </button>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  32 Go
+                </button>
+              </div>
+              <div className="mb-10">
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  64 Go
+                </button>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  128 Go
+                </button>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  256 Go
+                </button>
+              </div>
             </div>
-            <div className="mb-10">
-              <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                64 Go
-              </button>
-              <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                128 Go
-              </button>
-              <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                256 Go
-              </button>
+            <div className="flex flex-col justify-around items-center ">
+              <p className="font-bold mb-2">Capacité de RAM</p>
+              <div>
+                <button className="bg-gray-200 px-1 mx-1 mb-2 rounded font-medium w-16 h-8">
+                  2 Go
+                </button>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  4 Go
+                </button>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  6 Go
+                </button>
+              </div>
+              <div className="mb-10">
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  8 Go
+                </button>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  12 Go
+                </button>
+                <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
+                  16 Go
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          className="absolute bottom-10 w-full
-      "
-        >
+        <div className="absolute bottom-10 w-full">
           <div className="flex justify-around">
             <button className="bg-gray-400 px-8 py-2 rounded-3xl font-bold text-white">
               Retour
