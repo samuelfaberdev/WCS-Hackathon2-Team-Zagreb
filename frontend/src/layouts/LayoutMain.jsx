@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main className="bg-main bg-no-repeat bg-right h-full overflow-y-auto ml-64">
+      <main className="bg-main bg-no-repeat bg-right h-[100vh] overflow-y-auto ml-64">
         {children}
       </main>
     </>
