@@ -10,8 +10,8 @@ body {
 
 @font-face {
   /* Font de test à voir si on change pour celle du Figma */
-  font-family: "Raleway";
-  src: url("/fonts/Raleway-Regular.ttf") format("truetype");
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
