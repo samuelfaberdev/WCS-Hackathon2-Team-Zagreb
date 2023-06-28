@@ -7,8 +7,9 @@ import LayoutConnect from "./layouts/LayoutConnect";
 import PageConnexion from "./pages/PageConnexion";
 import UsersMetierPage from "./pages/UsersMetierPage";
 import CaracteristiquesPage from "./pages/CaracteristiquesPage";
+import Model from "./pages/Model";
 // import des composants
-import Model from "./components/Model";
+
 // import de la 404
 import Page404 from "./pages/Page404";
 
