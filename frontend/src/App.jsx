@@ -5,7 +5,6 @@ import LayoutConnect from "./layouts/LayoutConnect";
 import Connexion from "./pages/Connexion";
 import UsersMetierPage from "./pages/UsersMetierPage";
 import Page404 from "./pages/Page404";
-
 import "./App.css";
 
 function App() {
