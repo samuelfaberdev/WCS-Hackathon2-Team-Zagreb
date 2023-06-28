@@ -1,12 +1,10 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import Home from "./pages/Home";
-import Page404 from "./pages/Page404";
-import PageConnexion from "./pages/PageConnexion"
 
+import PageConnexion from "./pages/PageConnexion";
 import LayoutMain from "./layouts/LayoutMain";
 import LayoutConnect from "./layouts/LayoutConnect";
-import Connexion from "./pages/Connexion";
 import UsersMetierPage from "./pages/UsersMetierPage";
+
 import Page404 from "./pages/Page404";
 import "./App.css";
 
@@ -26,9 +24,8 @@ function App() {
   ) : (
     <LayoutConnect>
       <Routes>
-        <Route path="/" element={<Connexion />} />
+        <Route path="/" element={<PageConnexion />} />
         <Route path="*" element={<Page404 />} />
-        <Route path="/connexion" element={<PageConnexion />} />
       </Routes>
     </LayoutConnect>
   );
