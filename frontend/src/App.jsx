@@ -31,12 +31,10 @@ function App() {
         <Route path="/app/" element={<UsersMetierPage />} />
         <Route path="/app/modele" element={<Model />} />
         <Route path="/app/systeme" element={<Systeme />} />
-
         <Route
           path="/app/caracteristiques"
           element={<CaracteristiquesPage />}
         />
-
         <Route path="/app/faq" element={<FAQPage />} />
         <Route path="/app/testphone" element={<SmartPhone />} />
         <Route path="*" element={<Page404 />} />
