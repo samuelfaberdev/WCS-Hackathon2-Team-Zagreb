@@ -21,3 +21,9 @@ body {
 @layer utilities {
   /* Mettre ici les class personnalisées comme dans du CSS classique */
 }
+
+.titre {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
