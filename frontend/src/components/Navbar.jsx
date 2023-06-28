@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <div className="bg-[#002743] text-white flex flex-col w-64 p-8 h-[100vh] fixed justify-between font-bold">
@@ -20,14 +22,14 @@ function Navbar() {
         </button>
       </div>
       <div className=" flex flex-col gap-8">
-        <button className="flex">
+        <Link to="/app/faq" className="flex">
           <img
             className="px-3"
             src="/assets/images/navbar/logo_faq.svg"
             alt=""
           />
           FAQ
-        </button>
+        </Link>
         <button className="flex">
           <img
             className="px-3"
