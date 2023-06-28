@@ -1,16 +1,21 @@
 import { useState } from "react";
 import "../App.css";
 
+//ajout test
+import MobileScore from '../components/MobileScore'
 export default function Model() {
   const [modele, setModele] = useState("");
-
+  const [category, setCategory] = useState(0)
   const handleSubmit = (e) => {
     e.preventDefault();
     modele != ""
       ? alert(`le modèle est ${modele}`)
       : alert("please enter a valid model");
+
+    setCategory(modele)
   };
   return (
+    <>
     <div className="flex flex-col items-center gap-12">
       <h1 className="text-center font-bold text-[40px]">
         Veuillez renseigner le numéro de <br /> modèle du téléphone
@@ -38,5 +43,7 @@ export default function Model() {
         </button>
       </div>
     </div>
+    <MobileScore category={category}/>
+    </>
   );
 }
