@@ -1,4 +1,3 @@
-import "./UsersMetierPage.css";
 export default function UsersMetierPage() {
   return (
     <div className="flex flex-col items-center mt-20">
