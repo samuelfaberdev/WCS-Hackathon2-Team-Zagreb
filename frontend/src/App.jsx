@@ -16,6 +16,7 @@ import Page404 from "./pages/Page404";
 
 // import du CSS
 import "./App.css";
+import FAQPage from "./pages/FAQPage";
 
 function App() {
   const location = useLocation();
@@ -31,6 +32,7 @@ function App() {
           path="/app/caracteristiques"
           element={<CaracteristiquesPage />}
         />
+        <Route path="/app/faq" element={<FAQPage />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </LayoutMain>
@@ -38,7 +40,7 @@ function App() {
     // Routes de connexion et oublie mot de passe
     <LayoutConnect>
       <Routes>
-      <Route path="/renitialiser" element={<PageMotDePasseOublier />} />
+        <Route path="/renitialiser" element={<PageMotDePasseOublier />} />
         <Route path="/" element={<PageConnexion />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
