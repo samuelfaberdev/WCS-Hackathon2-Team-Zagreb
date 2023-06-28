@@ -1,4 +1,4 @@
-import './UsersMetierPage.css';
+import "./UsersMetierPage.css";
 export default function UsersMetierPage() {
   return (
     <div className="flex flex-col items-center mt-20">
@@ -7,10 +7,12 @@ export default function UsersMetierPage() {
       </h2>
 
       <div className="flex flex-col items-center mt-16 ml-40">
-        <button className="button1 mb-7 font-bold">
+        <button className="bg-[#00acb0] p-1 w-[250px] h-[40px] rounded-[30px] text-white mb-7 font-bold">
           Identification automatique
         </button>
-        <button className="button2 font-bold">Identification manuelle</button>
+        <button className="p-1 w-[230px] h-[40px] rounded-[30px] border-2 font-bold">
+          Identification manuelle
+        </button>
       </div>
 
       <img
