@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function PageMotDePasseOublier() {
-  const [submitted, setSubmitted] = useState(false);   const handleSubmit = (event) => {
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmitted(true); 
+    setSubmitted(true);
   };
 
   return (
     <>
       <section className="flex justify-center relative right-[15%] h-screen">
         <div className="flex items-center">
-          {!submitted ? ( 
+          {!submitted ? (
             <form onSubmit={handleSubmit}>
               <div className="flex justify-center h-8 font-semibold text-5xl w-[30rem]">
                 <label>Mot de passe oublié ?</label>
               </div>
               <div className="flex text-center h-8 font-bold w-[30rem] mt-8 mb-16">
                 <label>
-                  Pour réinitialiser votre mot de passe, renseignez votre adresse mail
+                  Pour réinitialiser votre mot de passe, renseignez votre
+                  adresse mail
                 </label>
               </div>
               <div className="flex items-center flex-col">
@@ -37,11 +39,11 @@ export default function PageMotDePasseOublier() {
               </div>
             </form>
           ) : (
-            <div className='flex items-center flex-col'    >
-                <img src='/assets/images/Icon_validation.png' width={35}></img>
-              <p className='font-bold w-96 text-center	'>
-                Vous allez recevoir un mail à l’adresse mail renseignée pour réinitialiser votre
-                mot de passe.
+            <div className="flex items-center flex-col">
+              <img src="/assets/images/Icon_validation.png" width={35}></img>
+              <p className="font-bold w-96 text-center	">
+                Vous allez recevoir un mail à l’adresse mail renseignée pour
+                réinitialiser votre mot de passe.
               </p>
             </div>
           )}
