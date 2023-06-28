@@ -6,6 +6,7 @@ import LayoutConnect from "./layouts/LayoutConnect";
 // import des pages
 import PageConnexion from "./pages/PageConnexion";
 import UsersMetierPage from "./pages/UsersMetierPage";
+import PageMotDePasseOublier from "./pages/PageMotDePasseOublier";
 import CaracteristiquesPage from "./pages/CaracteristiquesPage";
 import Model from "./pages/Model";
 // import des composants
@@ -37,6 +38,7 @@ function App() {
     // Routes de connexion et oublie mot de passe
     <LayoutConnect>
       <Routes>
+      <Route path="/renitialiser" element={<PageMotDePasseOublier />} />
         <Route path="/" element={<PageConnexion />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
