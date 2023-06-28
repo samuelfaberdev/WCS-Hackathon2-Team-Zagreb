@@ -1,9 +1,16 @@
+import { Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
+import Page404 from "../pages/Page404";
+
 import "./App.css";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Page404 />} />
+      </Routes>
     </>
   );
 }
