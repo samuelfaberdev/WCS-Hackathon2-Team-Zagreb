@@ -1,6 +1,6 @@
 export default function SmartPhone() {
   return (
-    <div className="w-full flex justify-center mt-8">
+    <>
       <div className="w-[638px] h-[440px] bg-[#00ACB033] flex flex-row p-4 rounded-lg py-12 px-12">
         <img src="/assets/images/phones/iphone.png" alt="Samsung Galaxy A50" />
         <div className="flex flex-col gap-4 ml-8 w-full">
@@ -31,6 +31,6 @@ export default function SmartPhone() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
