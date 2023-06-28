@@ -1,30 +1,25 @@
 import { useState } from "react";
 
+import MobileScore from "../components/MobileScore";
+import SmartPhone from "../components/SmartPhone";
+
 export default function Model() {
   const [modele, setModele] = useState("");
+  const [category, setCategory] = useState(0);
   const handleSubmit = (e) => {
     e.preventDefault();
     modele != ""
       ? alert(`le modèle est ${modele}`)
       : alert("please enter a valid model");
+
+    setCategory(modele);
   };
   return (
     <>
-      <div className="flex flex-col items-center gap-12">
-        <h1 className="text-center font-bold text-[40px]">
-          Veuillez renseigner le numéro de <br /> modèle du téléphone
-        </h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            className="bg-transparent w-[400px] border-b border-black"
-            type="text"
-            id="modele"
-            value={modele}
-            placeholder="Numéro de modèle"
-            onChange={(e) => setModele(e.target.value)}
-          />
-        </form>
-        <div className="flex gap-40">
+      <div className="flex flex-col items-center gap-8">
+        <SmartPhone />
+        <MobileScore category={category} />
+        <div className="flex gap-20">
           <button className="bg-[#a7a7a7] px-8 py-3 rounded-full text-white font-bold text-lg ">
             Retour
           </button>
@@ -33,7 +28,7 @@ export default function Model() {
             onClick={handleSubmit}
             className="bg-[#00acb0] px-8  rounded-full text-white font-bold text-lg"
           >
-            Valider
+            Ajouter au stock
           </button>
         </div>
       </div>

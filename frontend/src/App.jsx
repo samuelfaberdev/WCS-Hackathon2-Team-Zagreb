@@ -12,8 +12,8 @@ import PageNouveauMotDePasse from "./pages/PageNouveauMotDePasse";
 import Model from "./pages/Model";
 import Systeme from "./pages/Systeme";
 import FAQPage from "./pages/FAQPage";
+import AjoutStock from "./pages/AjoutStock";
 // import des composants
-import SmartPhone from "./components/SmartPhone";
 // import de la 404
 import Page404 from "./pages/Page404";
 
@@ -36,7 +36,7 @@ function App() {
           element={<CaracteristiquesPage />}
         />
         <Route path="/app/faq" element={<FAQPage />} />
-        <Route path="/app/testphone" element={<SmartPhone />} />
+        <Route path="/app/ajoutstock" element={<AjoutStock />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </LayoutMain>

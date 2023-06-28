@@ -6,31 +6,31 @@ export default function MobileScore({ category }) {
   const [scoreColor, setScoreColor] = useState("red");
 
   useEffect(() => {
-      console.log(scoreColor);
-      console.log(category)
-      switch (category) {
-        case "1":
-          setScoreColor("blue");
-          break;
-        case "2":
-          setScoreColor("green");
-          break;
-        case "3":
-          setScoreColor("yellow");
-          break;
-        case "4":
-          setScoreColor("orange");
-          break;
-        case "5":
-          setScoreColor("#000000");
-          break;
-        default:
-          setScoreColor("");
-      }
+    console.log(scoreColor);
+    console.log(category);
+    switch (category) {
+      case "1":
+        setScoreColor("blue");
+        break;
+      case "2":
+        setScoreColor("green");
+        break;
+      case "3":
+        setScoreColor("yellow");
+        break;
+      case "4":
+        setScoreColor("orange");
+        break;
+      case "5":
+        setScoreColor("#000000");
+        break;
+      default:
+        setScoreColor("");
+    }
   }, [category]);
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="w-[50%] flex justify-between items-center">
       <span className="flex items-center text-white justify-center bg-[#002743] w-4 h-4 rounded-full ">
         <div
           className={`bg-[#002743] text-white p-10 rounded-full w-32 flex items-center justify-center flex-col border-solid border-[${scoreColor}] border-8 `}
