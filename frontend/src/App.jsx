@@ -18,6 +18,7 @@ import PageNouveauMotDePasse from "./pages/PageNouveauMotDePasse";
 
 // import du CSS
 import "./App.css";
+import FAQPage from "./pages/FAQPage";
 
 function App() {
   const location = useLocation();
@@ -35,6 +36,8 @@ function App() {
           path="/app/caracteristiques"
           element={<CaracteristiquesPage />}
         />
+
+        <Route path="/app/faq" element={<FAQPage />} />
         <Route path="/app/testphone" element={<SmartPhone />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
