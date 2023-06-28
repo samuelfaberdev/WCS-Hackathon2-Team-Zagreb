@@ -9,6 +9,7 @@ import UsersMetierPage from "./pages/UsersMetierPage";
 import PageMotDePasseOublier from "./pages/PageMotDePasseOublier";
 import CaracteristiquesPage from "./pages/CaracteristiquesPage";
 import Model from "./pages/Model";
+import Systeme from "./pages/Systeme";
 // import des composants
 
 // import de la 404
@@ -28,6 +29,8 @@ function App() {
       <Routes>
         <Route path="/app/" element={<UsersMetierPage />} />
         <Route path="/app/modele" element={<Model />} />
+        <Route path="/app/systeme" element={<Systeme />} />
+
         <Route
           path="/app/caracteristiques"
           element={<CaracteristiquesPage />}
