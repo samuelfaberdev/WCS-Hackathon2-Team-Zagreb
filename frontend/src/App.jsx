@@ -14,15 +14,13 @@ function App() {
   const isLogged = location.pathname.startsWith("/app");
 
   return isLogged ? (
-    <>
-      <LayoutMain>
-        <Routes>
-          <Route path="/app/" element={<UsersMetierPage />} />
-          <Route path="/app/modele" element={<Model />} />
-          <Route path="*" element={<Page404 />} />
-        </Routes>
-      </LayoutMain>
-    </>
+    <LayoutMain>
+      <Routes>
+        <Route path="/app/" element={<UsersMetierPage />} />
+        <Route path="/app/modele" element={<Model />} />
+        <Route path="*" element={<Page404 />} />
+      </Routes>
+    </LayoutMain>
   ) : (
     <LayoutConnect>
       <Routes>
