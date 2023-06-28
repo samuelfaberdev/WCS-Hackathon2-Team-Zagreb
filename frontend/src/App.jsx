@@ -7,6 +7,7 @@ import UsersMetierPage from "./pages/UsersMetierPage";
 
 import Page404 from "./pages/Page404";
 import "./App.css";
+import Model from "./components/Model";
 
 function App() {
   const location = useLocation();
@@ -17,6 +18,7 @@ function App() {
       <LayoutMain>
         <Routes>
           <Route path="/app/" element={<UsersMetierPage />} />
+          <Route path="/app/modele" element={<Model />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </LayoutMain>
