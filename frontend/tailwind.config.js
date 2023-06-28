@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         raleway: ["Raleway, sans-serif"],
       },
+      backgroundImage: {
+        main: "url('/assets/background/main.png')",
+        connect: "url('/assets/background/connect.png')",
+      },
     },
   },
   plugins: [],
