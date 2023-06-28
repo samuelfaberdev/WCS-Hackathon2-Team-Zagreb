@@ -50,32 +50,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-{
-  /* <div className="bg-[#002743] h-96 w-64 flex flex-col">
-      <div className="flex flex-col items-center">
-        <img height="80" src="/assets/images/navbar/logo_emmaus.svg" alt="" />
-        <h1>
-          Bienvenue <br /> Ma Couille
-        </h1>
-        <button className="flex gap-8">
-          <img src="/assets/images/navbar/logo_add.svg" alt="" />
-          Nouvelle entrée
-        </button>
-      </div>
-      <div className="flex flex-col gap-5">
-        <button className="flex gap-8">
-          <img src="/assets/images/navbar/logo_faq.svg" alt="" />
-          FAQ
-        </button>
-        <button className="flex gap-8">
-          <img src="/assets/images/navbar/logo_parametre.svg" alt="" />
-          Paramètres
-        </button>
-        <button className="flex gap-8">
-          <img src="/assets/images/navbar/logo_deconnexion.svg" alt="" />
-          Déconnexion
-        </button>
-      </div>
-    </div> */
-}
