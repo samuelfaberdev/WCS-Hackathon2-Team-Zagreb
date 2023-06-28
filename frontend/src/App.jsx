@@ -11,7 +11,7 @@ import CaracteristiquesPage from "./pages/CaracteristiquesPage";
 import Model from "./pages/Model";
 import Systeme from "./pages/Systeme";
 // import des composants
-
+import SmartPhone from "./components/SmartPhone";
 // import de la 404
 import Page404 from "./pages/Page404";
 import PageNouveauMotDePasse from "./pages/PageNouveauMotDePasse";
@@ -35,6 +35,7 @@ function App() {
           path="/app/caracteristiques"
           element={<CaracteristiquesPage />}
         />
+        <Route path="/app/testphone" element={<SmartPhone />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </LayoutMain>
