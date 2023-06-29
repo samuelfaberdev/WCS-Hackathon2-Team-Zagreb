@@ -1,8 +1,9 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
 // import des layouts
-import LayoutMain from "./layouts/LayoutMain";
-import LayoutConnect from "./layouts/LayoutConnect";
+import LayoutMain from './layouts/LayoutMain';
+import LayoutConnect from './layouts/LayoutConnect';
 // import des pages
 import PageConnexion from "./pages/PageConnexion";
 import UsersMetierPage from "./pages/UsersMetierPage";
@@ -14,15 +15,18 @@ import Systeme from "./pages/Systeme";
 import FAQPage from "./pages/FAQPage";
 import AjoutStock from "./pages/AjoutStock";
 // import des composants
+import SmartPhone from './components/SmartPhone';
 // import de la 404
-import Page404 from "./pages/Page404";
+import Page404 from './pages/Page404';
 
 // import du CSS
-import "./App.css";
+import './App.css';
+import Popup from './components/Popup';
 
 function App() {
   const location = useLocation();
-  const isLogged = location.pathname.startsWith("/app");
+  const isLogged = location.pathname.startsWith('/app');
+  const [buttonPopup, setButtonPopup] = useState(true);
 
   return isLogged ? (
     // Routes principales une fois loggé
@@ -31,6 +35,10 @@ function App() {
         <Route path="/app/" element={<UsersMetierPage />} />
         <Route path="/app/model" element={<Model />} />
         <Route path="/app/systeme" element={<Systeme />} />
+        <Route
+          path="/app/popup"
+          element={<Popup trigger={buttonPopup} setTrigger={setButtonPopup} />}
+        />
         <Route
           path="/app/caracteristiques"
           element={<CaracteristiquesPage />}
