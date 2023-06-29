@@ -17,13 +17,15 @@ export default function Etat() {
       </div>
 
       <h3>Présence d&apos;un chargeur ?</h3>
-      <div>
-        <input type="radio" name="charger" id="chargeryes" />
-        <label htmlFor="chargeryes">Oui</label>
-      </div>
-      <div>
-        <input type="radio" name="charger" id="chargerno" />
-        <label htmlFor="chargerno">Non</label>
+      <div className="flex gap-8">
+        <div>
+          <input className="mr-2" type="radio" name="charger" id="chargeryes" />
+          <label htmlFor="chargeryes">Oui</label>
+        </div>
+        <div>
+          <input className="mr-2" type="radio" name="charger" id="chargerno" />
+          <label htmlFor="chargerno">Non</label>
+        </div>
       </div>
     </>
   );
