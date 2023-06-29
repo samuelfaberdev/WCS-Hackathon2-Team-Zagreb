@@ -5,7 +5,15 @@ import MobileScore from "../components/MobileScore";
 import Popup from "../components/Popup";
 import SmartPhone from "../components/SmartPhone";
 import Etat from "../components/Etat";
-export default function Model() {
+
+export default function Model({
+  selectedMarque,
+  selectedModel,
+  selectedCouleur,
+  selectedRam,
+  selectedStockage,
+  os,
+}) {
   const [step, setStep] = useState("etat");
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
@@ -33,7 +41,14 @@ export default function Model() {
     <>
       {<Popup trigger={buttonPopup} setTrigger={setButtonPopup} />}
       <div className="flex flex-col items-center gap-8">
-        <SmartPhone />
+        <SmartPhone
+          selectedMarque={selectedMarque}
+          selectedModel={selectedModel}
+          selectedCouleur={selectedCouleur}
+          selectedRam={selectedRam}
+          selectedStockage={selectedStockage}
+          os={os}
+        />
         {step === "etat" && <Etat />}
         {step !== "etat" && <MobileScore />}
         <div className="flex gap-20">
