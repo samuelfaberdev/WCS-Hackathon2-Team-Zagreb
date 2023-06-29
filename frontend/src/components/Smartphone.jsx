@@ -4,6 +4,7 @@ export default function SmartPhone({
   selectedCouleur,
   selectedRam,
   selectedStockage,
+  os,
 }) {
   return (
     <>
@@ -12,11 +13,11 @@ export default function SmartPhone({
           width="200"
           // src="/assets/images/phones/iphone_13.png"
           src={`/assets/images/phones/${selectedModel}.png`}
-          alt={`${selectedMarque} ${selectedModel}`}
+          alt={`${selectedMarque} - ${selectedModel}`}
         />
         <div className="flex flex-col gap-4 ml-8 w-full">
           <h2 className="font-bold text-3xl pb-7">
-            {selectedMarque} {selectedModel}
+            {selectedMarque} - {selectedModel}
           </h2>
           <div className="flex justify-between gap-4">
             <p>
@@ -27,7 +28,8 @@ export default function SmartPhone({
           </div>
           <div className="flex justify-between gap-4">
             <p>
-              <strong>Système d&apos;exploitation : </strong> Android 11
+              <strong>Système d&apos;exploitation : </strong>
+              {os}
             </p>
             <img src="/assets/images/yellow_check.svg" alt="Yellow Check" />
           </div>

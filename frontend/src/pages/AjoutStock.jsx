@@ -12,6 +12,7 @@ export default function Model({
   selectedCouleur,
   selectedRam,
   selectedStockage,
+  os,
 }) {
   const [step, setStep] = useState("etat");
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -46,6 +47,7 @@ export default function Model({
           selectedCouleur={selectedCouleur}
           selectedRam={selectedRam}
           selectedStockage={selectedStockage}
+          os={os}
         />
         {step === "etat" && <Etat />}
         {step !== "etat" && <MobileScore />}

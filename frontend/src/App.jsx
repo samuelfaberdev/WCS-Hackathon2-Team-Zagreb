@@ -27,6 +27,7 @@ function App() {
   const [couleurs, setCouleurs] = useState([]);
   const [rams, setRams] = useState([]);
   const [stockages, setStockages] = useState([]);
+  const [os, setOs] = useState("");
 
   const [selectedMarque, setSelectedMarque] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
@@ -42,7 +43,10 @@ function App() {
     <LayoutMain>
       <Routes>
         {/* <Route path="/app/" element={<UsersMetierPage />} /> */}
-        <Route path="/app/" element={<Systeme setMarques={setMarques} />} />
+        <Route
+          path="/app/"
+          element={<Systeme setMarques={setMarques} os={os} setOs={setOs} />}
+        />
         <Route
           path="/app/caracteristiques"
           element={
@@ -73,6 +77,7 @@ function App() {
           path="/app/ajoutstock"
           element={
             <AjoutStock
+              os={os}
               selectedMarque={selectedMarque}
               selectedModel={selectedModel}
               selectedCouleur={selectedCouleur}
