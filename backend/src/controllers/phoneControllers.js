@@ -62,7 +62,7 @@ const model = (req, res) => {
 
 const couleur = (req, res) => {
   models.phone
-    .findRAMStockage(req.params.couleur)
+    .findRAM(req.params.model)
     .then(([rows]) => {
       if (rows[0] == null) {
         res.sendStatus(404);
