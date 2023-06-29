@@ -14,7 +14,7 @@ export default function CaracteristiquesPage({
   setRams,
 }) {
   const navigate = useNavigate();
-
+//sam y
   const [selectedMarque, setSelectedMarque] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const [selectedCouleur, setSelectedCouleur] = useState("");
