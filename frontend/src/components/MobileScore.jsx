@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function MobileScore({ selectedRam, selectedStockage, antutu }) {
   // const prix = 69; // quel calcul pour évaluer le prix ?
@@ -130,24 +130,53 @@ export default function MobileScore({ selectedRam, selectedStockage, antutu }) {
   useEffect(() => {
     switch (category) {
       case 1:
-        setScoreColor("blue");
+        setScoreColor('blue');
         break;
       case 2:
-        setScoreColor("green");
+        setScoreColor('green');
         break;
       case 3:
-        setScoreColor("yellow");
+        setScoreColor('yellow');
         break;
       case 4:
-        setScoreColor("orange");
+        setScoreColor('orange');
         break;
       case 5:
-        setScoreColor("red");
+        setScoreColor('red');
         break;
       default:
-        setScoreColor("");
+        setScoreColor('');
     }
   }, [category]);
+
+  useEffect(() => {
+    switch (selectedStockage) {
+      case 16:
+        setScoreStockage(31);
+        break;
+      case 32:
+        setScoreStockage(45);
+        break;
+      case 64:
+        setScoreStockage(66);
+        break;
+      case 128:
+        setScoreStockage(82);
+        break;
+      case 256:
+        setScoreStockage(100);
+        break;
+      case 512:
+        setScoreStockage(117);
+        break;
+      case 1000:
+        setScoreStockage(135);
+        break;
+      default:
+        setScoreStockage(0);
+    }
+    console.log(scoreStockage);
+  }, [scoreStockage]);
 
   return (
     <div className="w-[50%] flex justify-around items-center mb-6">
