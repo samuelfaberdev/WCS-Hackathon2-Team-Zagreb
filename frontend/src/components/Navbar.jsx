@@ -12,14 +12,14 @@ function Navbar() {
         <h1 className="text-center text-2xl font-bold">
           Bienvenue <br /> John
         </h1>
-        <button className="flex">
+        <Link to="/app/" className="flex">
           <img
             className="px-3"
             src="/assets/images/navbar/logo_add.svg"
             alt=""
           />
           Nouvelle entrée
-        </button>
+        </Link>
       </div>
       <div className=" flex flex-col gap-8">
         <Link to="/app/faq" className="flex">

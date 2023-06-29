@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function UsersMetierPage() {
   return (
     <div className="flex flex-col items-center mt-20">
@@ -6,12 +8,18 @@ export default function UsersMetierPage() {
       </h2>
 
       <div className="flex flex-col items-center mt-16">
-        <button className="bg-[#00acb0] p-1 w-[250px] h-[40px] rounded-[30px] text-white mb-7 font-bold">
+        <Link
+          to="/app/model"
+          className="bg-[#00acb0] p-1 w-[250px] h-[40px] rounded-[30px] text-white mb-7 font-bold flex justify-center items-center"
+        >
           Identification automatique
-        </button>
-        <button className="p-1 w-[230px] h-[40px] rounded-[30px] border-2 font-bold">
+        </Link>
+        <Link
+          to="/app/caracteristiques"
+          className="p-1 w-[230px] h-[40px] rounded-[30px] border-2 font-bold flex justify-center items-center"
+        >
           Identification manuelle
-        </button>
+        </Link>
       </div>
 
       <img

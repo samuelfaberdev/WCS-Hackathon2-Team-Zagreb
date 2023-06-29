@@ -29,7 +29,7 @@ function App() {
     <LayoutMain>
       <Routes>
         <Route path="/app/" element={<UsersMetierPage />} />
-        <Route path="/app/modele" element={<Model />} />
+        <Route path="/app/model" element={<Model />} />
         <Route path="/app/systeme" element={<Systeme />} />
         <Route
           path="/app/caracteristiques"

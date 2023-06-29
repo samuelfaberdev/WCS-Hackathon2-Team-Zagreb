@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Model() {
   const [modele, setModele] = useState("");
@@ -8,6 +9,12 @@ export default function Model() {
       ? alert(`le modèle est ${modele}`)
       : alert("please enter a valid model");
   };
+
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <div className="flex flex-col items-center gap-12">
@@ -25,7 +32,10 @@ export default function Model() {
           />
         </form>
         <div className="flex gap-40">
-          <button className="bg-[#a7a7a7] px-8 py-3 rounded-full text-white font-bold text-lg ">
+          <button
+            onClick={goBack}
+            className="bg-[#a7a7a7] px-8 py-3 rounded-full text-white font-bold text-lg "
+          >
             Retour
           </button>
 
