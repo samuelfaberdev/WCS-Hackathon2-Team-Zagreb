@@ -28,6 +28,20 @@ class AbstractManager {
     );
   }
 
+  findRAM(model) {
+    return this.database.query(
+      `select distinct ram from  ${this.table} where model = ?`,
+      [model]
+    );
+  }
+
+  findStockage(model) {
+    return this.database.query(
+      `select distinct stockage from  ${this.table} where model = ?`,
+      [model]
+    );
+  }
+
   setDatabase(database) {
     this.database = database;
   }
