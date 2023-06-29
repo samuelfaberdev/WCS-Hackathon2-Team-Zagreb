@@ -107,22 +107,22 @@ export default function MobileScore({ selectedRam, selectedStockage, antutu }) {
       setCategoryText("1-HC");
       setCategory(1);
       setPrix(0);
-    } else if (antutu < 165) {
+    } else if (scoreGlobal < 165) {
       setCategoryText("2-P");
       setCategory(2);
-      setPrix(49);
-    } else if (antutu < 255) {
+      setPrix(99);
+    } else if (scoreGlobal < 255) {
       setCategoryText("3-B");
       setCategory(3);
-      setPrix(99);
-    } else if (antutu < 375) {
+      setPrix(199);
+    } else if (scoreGlobal < 375) {
       setCategoryText("4-A");
       setCategory(4);
-      setPrix(149);
+      setPrix(299);
     } else {
       setCategoryText("5-P");
       setCategory(5);
-      setPrix(249);
+      setPrix(399);
     }
     console.log(`Score Global : ${scoreGlobal}`);
   }, [scoreGlobal, prix, category, categoryText]);
