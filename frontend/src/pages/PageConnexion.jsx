@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function PageConnexion() {
+export default function PageConnexion({setIsLogged}) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,11 +10,13 @@ export default function PageConnexion() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if ((userName === "admin") & (password === "nimda69")) {
-      navigate("/app/");
+      setIsLogged(true)
+      navigate("/app/")
     } else {
       alert("Mauvais login ou mot de passe");
     }
   };
+
 
   const handlePasswordChange = (e) => {
     e.preventDefault();
@@ -40,8 +42,8 @@ export default function PageConnexion() {
                 placeholder="Nom d'utilisateur"
                 className="bg-transparent font-bold text-xl w-96 border-solid border-b-2 border-[#002743] focus:outline-none mt-5"
                 type="text"
-                minlength="4"
-                maxlength="20"
+                minLength="4"
+                maxLength="20"
                 required
               />
             </div>
@@ -51,8 +53,8 @@ export default function PageConnexion() {
                 placeholder="Mot de passe"
                 className="bg-transparent font-bold text-xl w-96 border-solid border-b-2 border-[#002743] focus:outline-none mt-5"
                 type="password"
-                minlength="4"
-                maxlength="20"
+                minLength="4"
+                maxLength="20"
                 required
               />
             </div>

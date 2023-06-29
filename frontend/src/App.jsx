@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 // import des layouts
@@ -25,38 +25,39 @@ function App() {
   const [marques, setMarques] = useState([]);
   const [models, setModels] = useState([]);
   const [couleurs, setCouleurs] = useState([]);
-  const  [rams, setRams] = useState([]);
+  const [rams, setRams] = useState([]);
   const [stockages, setStockages] = useState([]);
-  const location = useLocation();
-  const isLogged = location.pathname.startsWith("/app");
+
+  const [isLogged, setIsLogged] = useState(false);
 
   return isLogged ? (
     // Routes principales une fois loggé
-    <LayoutMain>
+    <LayoutMain setIsLogged={setIsLogged}>
       <Routes>
         {/* <Route path="/app/" element={<UsersMetierPage />} /> */}
-        <Route path="/app/" element={<Systeme setMarques={setMarques} />} />
-        <Route
-          path="/app/caracteristiques"
-          element={
-            <CaracteristiquesPage
-              marques={marques}
-              models={models}
-              setModels={setModels}
-              couleurs={couleurs}
-              setCouleurs={setCouleurs}
-              rams={rams}
-              setRams={setRams}
-              stockages={stockages}
-              setStockages={setStockages}
-            />
-          }
-        />
-        <Route path="/app/model" element={<Model />} />
-        <Route path="/app/systeme" element={<Systeme />} />
-        <Route path="/app/faq" element={<FAQPage />} />
-        <Route path="/app/ajoutstock" element={<AjoutStock />} />
-        <Route path="*" element={<Page404 />} />
+        <Route path="app" element={<Systeme setMarques={setMarques} />}>
+          <Route
+            path="caracteristiques"
+            element={
+              <CaracteristiquesPage
+                marques={marques}
+                models={models}
+                setModels={setModels}
+                couleurs={couleurs}
+                setCouleurs={setCouleurs}
+                rams={rams}
+                setRams={setRams}
+                stockages={stockages}
+                setStockages={setStockages}
+              />
+            }
+          />
+          <Route path="model" element={<Model />} />
+          <Route path="systeme" element={<Systeme />} />
+          <Route path="faq" element={<FAQPage />} />
+          <Route path="ajoutstock" element={<AjoutStock />} />
+          <Route path="*" element={<Page404 />} />
+        </Route>
       </Routes>
     </LayoutMain>
   ) : (
@@ -65,7 +66,7 @@ function App() {
       <Routes>
         <Route path="/nouveau-motdepasse" element={<PageNouveauMotDePasse />} />
         <Route path="/reinitialiser" element={<PageMotDePasseOublier />} />
-        <Route path="/" element={<PageConnexion />} />
+        <Route path="/" element={<PageConnexion setIsLogged={setIsLogged} />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </LayoutConnect>
