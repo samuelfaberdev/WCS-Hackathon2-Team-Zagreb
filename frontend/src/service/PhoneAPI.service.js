@@ -51,4 +51,12 @@ export const getStockage = async (model) => {
   }
 };
 
-
+ export const getAntutu = async (model) => {
+  try {
+    const url = `http://localhost:5000/phones/antutu/${model}`
+    const { data } = await axios(url);
+    return data;
+  } catch (error) {
+    return { data: [] }
+  }
+ };

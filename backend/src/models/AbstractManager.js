@@ -42,6 +42,13 @@ class AbstractManager {
     );
   }
 
+  findAntutu(model) {
+    return this.database.query(
+      `select distinct antutu from ${this.table} where model = ?`, 
+      [model]
+    );
+  }
+
   setDatabase(database) {
     this.database = database;
   }

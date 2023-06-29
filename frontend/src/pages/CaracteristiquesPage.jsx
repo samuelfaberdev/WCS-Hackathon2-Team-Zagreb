@@ -8,10 +8,12 @@ export default function CaracteristiquesPage({
   couleurs,
   rams,
   stockages,
+  antutu,
   setStockages,
   setModels,
   setCouleurs,
   setRams,
+  setAntutu,
   selectedMarque,
   selectedModel,
   setSelectedMarque,
@@ -98,7 +100,12 @@ export default function CaracteristiquesPage({
       phoneAPI.getStockage(selectedModel).then((stockage) => {
         setStockages(stockage);
       });
+  selectedModel !== "" &&
+      phoneAPI.getAntutu(selectedModel).then((antutu) => {
+        setAntutu(antutu);
+      });
   }, [selectedModel]);
+  
 
   return (
     <>
