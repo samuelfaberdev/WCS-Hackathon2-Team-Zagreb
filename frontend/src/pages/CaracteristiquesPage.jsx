@@ -6,14 +6,20 @@ export default function CaracteristiquesPage({
   marques,
   models,
   couleurs,
+  rams,
+  stockages,
+  setStockages,
   setModels,
   setCouleurs,
+  setRams,
 }) {
   const navigate = useNavigate();
 
   const [selectedMarque, setSelectedMarque] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const [selectedCouleur, setSelectedCouleur] = useState("");
+  const [selectedRam, setSelectedRam] = useState("");
+  const [selectedStockage, setSelectedStockage] = useState("");
 
   const goBack = () => {
     navigate("/app/");
@@ -48,6 +54,14 @@ export default function CaracteristiquesPage({
     selectedModel !== "" &&
       phoneAPI.getCouleur(selectedModel).then((couleur) => {
         setCouleurs(couleur);
+      });
+    selectedModel !== "" &&
+      phoneAPI.getRam(selectedModel).then((ram) => {
+        setRams(ram);
+      });
+    selectedModel !== "" &&
+      phoneAPI.getStockage(selectedModel).then((stockage) => {
+        setStockages(stockage);
       });
   }, [selectedModel]);
 
