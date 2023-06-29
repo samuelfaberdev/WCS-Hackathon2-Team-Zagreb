@@ -1,4 +1,11 @@
+import { useNavigate, Link } from "react-router-dom";
+
 export default function CaracteristiquesPage() {
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <div>
@@ -118,12 +125,18 @@ export default function CaracteristiquesPage() {
           </div>
           <div className="w-[50%] mx-auto">
             <div className="flex justify-between">
-              <button className="bg-gray-400 px-8 py-2 rounded-3xl font-bold text-white">
+              <button
+                onClick={goBack}
+                className="bg-gray-400 px-8 py-2 rounded-3xl font-bold text-white"
+              >
                 Retour
               </button>
-              <button className="bg-[#00ACB0] px-8 py-1 rounded-3xl font-bold text-white">
+              <Link
+                to="/app/ajoutstock"
+                className="bg-[#00ACB0] px-8 py-1 rounded-3xl font-bold text-white flex justify-center items-center"
+              >
                 Valider
-              </button>
+              </Link>
             </div>
           </div>
         </form>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <div className="bg-[#002743] text-white flex flex-col w-64 p-8 h-[100vh] fixed justify-between font-bold">
@@ -8,26 +10,26 @@ function Navbar() {
           alt=""
         />
         <h1 className="text-center text-2xl font-bold">
-          Bienvenue <br /> Ma Couille
+          Bienvenue <br /> John
         </h1>
-        <button className="flex">
+        <Link to="/app/" className="flex">
           <img
             className="px-3"
             src="/assets/images/navbar/logo_add.svg"
             alt=""
           />
           Nouvelle entrée
-        </button>
+        </Link>
       </div>
       <div className=" flex flex-col gap-8">
-        <button className="flex">
+        <Link to="/app/faq" className="flex">
           <img
             className="px-3"
             src="/assets/images/navbar/logo_faq.svg"
             alt=""
           />
           FAQ
-        </button>
+        </Link>
         <button className="flex">
           <img
             className="px-3"
