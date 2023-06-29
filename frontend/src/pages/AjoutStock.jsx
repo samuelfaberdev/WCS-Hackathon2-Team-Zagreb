@@ -15,7 +15,7 @@ export default function Model({
   os,
   antutu,
 }) {
-  const [step, setStep] = useState("etat");
+  const [step, setStep] = useState("stocked");
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
@@ -52,7 +52,13 @@ export default function Model({
           antutu={antutu}
         />
         {step === "etat" && <Etat />}
-        {step !== "etat" && <MobileScore />}
+        {step !== "etat" && (
+          <MobileScore
+            selectedRam={selectedRam}
+            selectedStockage={selectedStockage}
+            antutu={antutu}
+          />
+        )}
         <div className="flex gap-20">
           {step !== "stocked" && (
             <button
