@@ -15,7 +15,7 @@ export default function UsersMetierPage() {
           Identification automatique
         </Link>
         <Link
-          to="/app/caracteristiques"
+          to="/app/systeme"
           className="p-1 w-[230px] h-[40px] rounded-[30px] border-2 font-bold flex justify-center items-center"
         >
           Identification manuelle
