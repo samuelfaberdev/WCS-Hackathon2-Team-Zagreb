@@ -5,7 +5,7 @@ import LayoutMain from "./layouts/LayoutMain";
 import LayoutConnect from "./layouts/LayoutConnect";
 // import des pages
 import PageConnexion from "./pages/PageConnexion";
-import UsersMetierPage from "./pages/UsersMetierPage";
+// import UsersMetierPage from "./pages/UsersMetierPage";
 import PageMotDePasseOublier from "./pages/PageMotDePasseOublier";
 import CaracteristiquesPage from "./pages/CaracteristiquesPage";
 import PageNouveauMotDePasse from "./pages/PageNouveauMotDePasse";
@@ -28,7 +28,8 @@ function App() {
     // Routes principales une fois loggé
     <LayoutMain>
       <Routes>
-        <Route path="/app/" element={<UsersMetierPage />} />
+        {/* <Route path="/app/" element={<UsersMetierPage />} /> */}
+        <Route path="/app/" element={<Systeme />} />
         <Route path="/app/model" element={<Model />} />
         <Route path="/app/systeme" element={<Systeme />} />
         <Route
