@@ -12,7 +12,7 @@ const findAllPhones = (req, res) => {
     });
 };
 
-const os = (req, res) => {
+const findAllMarques = (req, res) => {
   models.phone
     .findMarque(req.params.os)
     .then(([rows]) => {
@@ -28,7 +28,7 @@ const os = (req, res) => {
     });
 };
 
-const marque = (req, res) => {
+const findAllModels = (req, res) => {
   models.phone
     .findModel(req.params.marque)
     .then(([rows]) => {
@@ -44,7 +44,7 @@ const marque = (req, res) => {
     });
 };
 
-const model = (req, res) => {
+const findAllCouleurs = (req, res) => {
   models.phone
     .findCouleur(req.params.model)
     .then(([rows]) => {
@@ -60,7 +60,7 @@ const model = (req, res) => {
     });
 };
 
-const couleur = (req, res) => {
+const findAllRams = (req, res) => {
   models.phone
     .findRAM(req.params.model)
     .then(([rows]) => {
@@ -76,10 +76,42 @@ const couleur = (req, res) => {
     });
 };
 
+const findAllStockages = (req, res) => {
+  models.phone
+  .findStockage(req.params.model)
+  .then(([rows]) => {
+    if (rows[0] == null) {
+      res.sendStatus(404);
+    } else {res.send(rows);
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  })
+}
+
+const findAllAntutu = (req, res) => {
+  models.phone
+  .findAntutu(req.params.model)
+  .then(([rows]) => {
+    if (rows[0] == null) {
+      res.sendStatus(404);
+    } else {res.send(rows);
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+    res.sendStatus(500);
+  })
+}
+
 module.exports = {
   findAllPhones,
-  os,
-  marque,
-  model,
-  couleur,
+  findAllMarques,
+  findAllModels,
+  findAllCouleurs,
+  findAllRams,
+  findAllStockages,
+  findAllAntutu,
 };
