@@ -5,8 +5,17 @@ import MobileScore from "../components/MobileScore";
 import Popup from "../components/Popup";
 import SmartPhone from "../components/SmartPhone";
 import Etat from "../components/Etat";
-export default function Model() {
-  const [step, setStep] = useState("etat");
+
+export default function Model({
+  selectedMarque,
+  selectedModel,
+  selectedCouleur,
+  selectedRam,
+  selectedStockage,
+  os,
+  antutu,
+}) {
+  const [step, setStep] = useState("stocked");
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
@@ -33,9 +42,23 @@ export default function Model() {
     <>
       {<Popup trigger={buttonPopup} setTrigger={setButtonPopup} />}
       <div className="flex flex-col items-center gap-8">
-        <SmartPhone />
+        <SmartPhone
+          selectedMarque={selectedMarque}
+          selectedModel={selectedModel}
+          selectedCouleur={selectedCouleur}
+          selectedRam={selectedRam}
+          selectedStockage={selectedStockage}
+          os={os}
+          antutu={antutu}
+        />
         {step === "etat" && <Etat />}
-        {step !== "etat" && <MobileScore />}
+        {step !== "etat" && (
+          <MobileScore
+            selectedRam={selectedRam}
+            selectedStockage={selectedStockage}
+            antutu={antutu}
+          />
+        )}
         <div className="flex gap-20">
           {step !== "stocked" && (
             <button
