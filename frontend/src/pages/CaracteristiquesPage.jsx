@@ -1,10 +1,34 @@
 import { useNavigate, Link } from "react-router-dom";
+import { useEffect } from "react";
+import * as phoneAPI from "../service/PhoneAPI.service";
 
-export default function CaracteristiquesPage() {
+export default function CaracteristiquesPage({
+  marques,
+  models,
+  couleurs,
+  setModels,
+  setCouleurs,
+}) {
   const navigate = useNavigate();
+
+  let selectedMarque = "";
+
   const goBack = () => {
-    navigate(-1);
+    navigate("/app/");
   };
+
+  const handleMarqueChange = (e) => {
+    selectedMarque = e.target.value;
+    console.log(selectedMarque);
+  };
+
+  useEffect(() => {
+    if (selectedMarque !== "") {
+      phoneAPI.getModel(selectedMarque).then((model) => {
+        console.log(model);
+      });
+    }
+  }, [selectedMarque]);
 
   return (
     <>
@@ -22,16 +46,17 @@ export default function CaracteristiquesPage() {
                   Marque
                 </label>
                 <select
+                  onChange={handleMarqueChange}
                   className="border-b-2 border-black"
                   name="Marques"
                   id="Marque"
                 >
                   <option value="">-- selectionner une marque --</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  {marques.map((marque, index) => (
+                    <option key={index} value={marque.marque}>
+                      {marque.marque}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div className="flex flex-col">
@@ -44,11 +69,11 @@ export default function CaracteristiquesPage() {
                   id="modele"
                 >
                   <option value="">-- selectionner un modèle --</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  {models.map((model, index) => (
+                    <option key={index} value={model.model}>
+                      {model.model}
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -62,11 +87,11 @@ export default function CaracteristiquesPage() {
                   id="couleur"
                 >
                   <option value="">-- selectionner une couleur --</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  {couleurs.map((couleur, index) => (
+                    <option key={index} value={couleur.couleur}>
+                      {couleur.couleur}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>

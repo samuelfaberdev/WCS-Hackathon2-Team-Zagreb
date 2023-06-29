@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 // import des layouts
 import LayoutMain from "./layouts/LayoutMain";
@@ -21,6 +22,9 @@ import Page404 from "./pages/Page404";
 import "./App.css";
 
 function App() {
+  const [marques, setMarques] = useState([]);
+  const [models, setModels] = useState([]);
+  const [couleurs, setCouleurs] = useState([]);
   const location = useLocation();
   const isLogged = location.pathname.startsWith("/app");
 
@@ -29,13 +33,24 @@ function App() {
     <LayoutMain>
       <Routes>
         {/* <Route path="/app/" element={<UsersMetierPage />} /> */}
-        <Route path="/app/" element={<Systeme />} />
-        <Route path="/app/model" element={<Model />} />
-        <Route path="/app/systeme" element={<Systeme />} />
+        <Route
+          path="/app/"
+          element={<Systeme marques={marques} setMarques={setMarques} />}
+        />
         <Route
           path="/app/caracteristiques"
-          element={<CaracteristiquesPage />}
+          element={
+            <CaracteristiquesPage
+              marques={marques}
+              models={models}
+              setModels={setModels}
+              couleurs={couleurs}
+              setCouleurs={setCouleurs}
+            />
+          }
         />
+        <Route path="/app/model" element={<Model />} />
+        <Route path="/app/systeme" element={<Systeme />} />
         <Route path="/app/faq" element={<FAQPage />} />
         <Route path="/app/ajoutstock" element={<AjoutStock />} />
         <Route path="*" element={<Page404 />} />
