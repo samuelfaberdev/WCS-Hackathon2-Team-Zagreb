@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ setIsLogged }) {
+  const navigate = useNavigate();
+  const logOut = () => {
+    setIsLogged(false);
+    navigate("/");
+  };
   return (
     <div className="bg-[#002743] text-white flex flex-col w-64 p-8 h-[100vh] fixed justify-between font-bold">
       <div className="flex flex-col gap-12">
@@ -38,7 +44,7 @@ function Navbar() {
           />
           Paramètres
         </button>
-        <button className="flex">
+        <button onClick={logOut} className="flex">
           <img
             className="px-3"
             src="/assets/images/navbar/logo_deconnexion.svg"
