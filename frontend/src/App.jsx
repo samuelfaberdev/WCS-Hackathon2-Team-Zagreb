@@ -45,7 +45,7 @@ function App() {
     <LayoutConnect>
       <Routes>
         <Route path="/nouveau-motdepasse" element={<PageNouveauMotDePasse />} />
-        <Route path="/renitialiser" element={<PageMotDePasseOublier />} />
+        <Route path="/reinitialiser" element={<PageMotDePasseOublier />} />
         <Route path="/" element={<PageConnexion />} />
         <Route path="*" element={<Page404 />} />
       </Routes>

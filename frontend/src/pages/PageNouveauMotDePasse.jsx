@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function PageNouveauMotDePasse() {
   const [submitted, setSubmitted] = useState(false);
@@ -43,7 +43,7 @@ export default function PageNouveauMotDePasse() {
             <div className="flex items-center flex-col">
               <img src="/assets/images/Icon_validation.png" width={35}></img>
               <p className="font-bold w-96 text-center	">
-              Votre mot de passe a bien été réinitialisé.
+                Votre mot de passe a bien été réinitialisé.
               </p>
             </div>
           )}
