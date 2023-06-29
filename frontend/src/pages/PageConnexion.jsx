@@ -40,6 +40,8 @@ export default function PageConnexion() {
                 placeholder="Nom d'utilisateur"
                 className="bg-transparent font-bold text-xl w-96 border-solid border-b-2 border-[#002743] focus:outline-none mt-5"
                 type="text"
+                minlength="4"
+                maxlength="20"
                 required
               />
             </div>
@@ -49,6 +51,8 @@ export default function PageConnexion() {
                 placeholder="Mot de passe"
                 className="bg-transparent font-bold text-xl w-96 border-solid border-b-2 border-[#002743] focus:outline-none mt-5"
                 type="password"
+                minlength="4"
+                maxlength="20"
                 required
               />
             </div>
