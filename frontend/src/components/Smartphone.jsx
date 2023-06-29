@@ -1,8 +1,13 @@
 export default function SmartPhone() {
   return (
     <>
-      <div className="w-[638px] h-[440px] bg-[#00ACB033] flex flex-row p-4 rounded-lg py-12 px-12">
-        <img src="/assets/images/phones/iphone.png" alt="Samsung Galaxy A50" />
+      <div className="w-[650px] h-[400px] bg-[#00ACB033] flex flex-row p-4 rounded-lg py-12 px-12">
+        <img
+          width="200"
+          // src="/assets/images/phones/iphone_13.png"
+          src="/assets/images/phones/samsung_S23.png"
+          alt="Samsung Galaxy A50"
+        />
         <div className="flex flex-col gap-4 ml-8 w-full">
           <h2 className="font-bold text-3xl pb-7">Samsung Galaxy A50</h2>
           <div className="flex justify-between gap-4">
