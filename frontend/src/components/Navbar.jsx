@@ -10,7 +10,7 @@ function Navbar() {
           alt=""
         />
         <h1 className="text-center text-2xl font-bold">
-          Bienvenue <br /> Ma Couille
+          Bienvenue <br /> John
         </h1>
         <button className="flex">
           <img
