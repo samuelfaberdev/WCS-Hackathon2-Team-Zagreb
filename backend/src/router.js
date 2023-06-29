@@ -16,5 +16,6 @@ router.get("/phones/models/:marque", phoneControllers.findAllModels);
 router.get("/phones/couleurs/:model", phoneControllers.findAllCouleurs);
 router.get("/phones/rams/:model", phoneControllers.findAllRams);
 router.get("/phones/stockages/:model", phoneControllers.findAllStockages);
+router.get('/phones/antutu/:model', phoneControllers.findAllAntutu);
 
 module.exports = router;

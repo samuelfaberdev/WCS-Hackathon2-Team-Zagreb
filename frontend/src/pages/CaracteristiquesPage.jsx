@@ -8,10 +8,12 @@ export default function CaracteristiquesPage({
   couleurs,
   rams,
   stockages,
+  antutu,
   setStockages,
   setModels,
   setCouleurs,
   setRams,
+  setAntutu,
 }) {
   const navigate = useNavigate();
 //sam y
@@ -20,6 +22,7 @@ export default function CaracteristiquesPage({
   const [selectedCouleur, setSelectedCouleur] = useState("");
   const [selectedRam, setSelectedRam] = useState("");
   const [selectedStockage, setSelectedStockage] = useState("");
+  const [selectedAntutu, setSelectedAntutu]= useState("");
 
   const goBack = () => {
     navigate("/app/");
@@ -63,7 +66,12 @@ export default function CaracteristiquesPage({
       phoneAPI.getStockage(selectedModel).then((stockage) => {
         setStockages(stockage);
       });
+  selectedModel !== "" &&
+      phoneAPI.getAntutu(selectedModel).then((antutu) => {
+        setAntutu(antutu);
+      });
   }, [selectedModel]);
+  
 
   return (
     <>
