@@ -25,6 +25,8 @@ function App() {
   const [marques, setMarques] = useState([]);
   const [models, setModels] = useState([]);
   const [couleurs, setCouleurs] = useState([]);
+  const  [rams, setRams] = useState([]);
+  const [stockages, setStockages] = useState([]);
   const location = useLocation();
   const isLogged = location.pathname.startsWith("/app");
 
@@ -43,6 +45,10 @@ function App() {
               setModels={setModels}
               couleurs={couleurs}
               setCouleurs={setCouleurs}
+              rams={rams}
+              setRams={setRams}
+              stockages={stockages}
+              setStockages={setStockages}
             />
           }
         />
