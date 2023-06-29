@@ -1,8 +1,12 @@
 export default function Page404() {
   return (
-    <>
-      <h2 className="">DÉSOLÉ !</h2>
-      <h3 className="">LA PAGE QUE VOUS RECHERCHEZ N’EXISTE PAS.</h3>
-    </>
+    <div className="flex justify-center h-full">
+      <img
+        width="800"
+        className="flex"
+        src="/assets/images/error_404.svg"
+        alt=""
+      />
+    </div>
   );
 }
