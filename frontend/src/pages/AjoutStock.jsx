@@ -2,18 +2,25 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MobileScore from "../components/MobileScore";
+import Popup from "../components/Popup";
 import SmartPhone from "../components/SmartPhone";
 import Etat from "../components/Etat";
 export default function Model() {
   const [step, setStep] = useState("etat");
+  const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
   const nextStep = (e) => {
     e.preventDefault();
     step === "etat" && setStep("prix");
-    step === "prix" && setStep("stocked");
+    step === "prix" && popup();
     step === "stocked" && navigate("/app/");
     console.log(step);
+  };
+
+  const popup = () => {
+    setButtonPopup(true);
+    setStep("stocked");
   };
 
   const prevStep = (e) => {
@@ -24,6 +31,7 @@ export default function Model() {
   };
   return (
     <>
+      {<Popup trigger={buttonPopup} setTrigger={setButtonPopup} />}
       <div className="flex flex-col items-center gap-8">
         <SmartPhone />
         {step === "etat" && <Etat />}

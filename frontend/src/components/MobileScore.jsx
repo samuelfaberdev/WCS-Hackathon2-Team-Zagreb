@@ -1,8 +1,8 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function MobileScore() {
-  const prix = 0; // quel calcul pour évaluer le prix ?
-  let category = 4; // catégorie sera dynamique selon le prix
+  const prix = 69; // quel calcul pour évaluer le prix ?
+  let category = 2; // catégorie sera dynamique selon le prix
 
   const [scoreColor, setScoreColor] = useState("");
 
@@ -26,46 +26,46 @@ export default function MobileScore() {
       default:
         setScoreColor("");
     }
-}, [category])
+  }, [category]);
 
   return (
-    <div className="w-[50%] flex justify-between items-center">
-      <div className="">
-      <span className="flex items-center text-white justify-center bg-[#002743] rounded-full">
-        <div
-        style={{borderColor : scoreColor}}
-        className={`bg-[#002743] text-white p-14 rounded-full flex items-center justify-center flex-col border-solid border-8 gap-3`}
-        >
-          <p className="flex items-center justify-center rounded-full ">
-            Catégorie
-          </p>
-          <p className="text-4xl">{category}-B</p>
+    <div className="w-[50%] flex justify-around items-center mb-6">
+      <div className="flex flex-col justify-center items-center">
+        <div className="flex items-center text-white justify-center bg-[#002743] rounded-full w-[196px]">
+          <div
+            style={{ borderColor: scoreColor }}
+            className={`bg-[#002743] text-white p-14 rounded-full flex items-center justify-center flex-col border-solid border-8 gap-3`}
+          >
+            <p className="flex items-center justify-center rounded-full text-lg font-bold">
+              Catégorie
+            </p>
+            <p className="text-5xl font-bold">{category}-B</p>
+          </div>
         </div>
-      </span>
-      <div className="flex items-center justify-center gap-6">
-        <div>
-        <p className="flex items-center text-white justify-center bg-[#002743] rounded-full w-8 h-8">
-          89
-        </p>
-        <p className="flex">Untutu</p>
+        <div className="flex items-center justify-center gap-6">
+          <div className="flex flex-col items-center relative bottom-4 right-8">
+            <p className="flex items-center text-white justify-center bg-[#002743] rounded-full w-16 h-16 text-2xl font-bold">
+              89
+            </p>
+            <p className="text-sm">Untutu</p>
+          </div>
+          <div className="flex flex-col items-center relative top-6">
+            <p className="flex items-center text-white justify-center bg-[#002743] rounded-full w-16 h-16 text-2xl font-bold">
+              40
+            </p>
+            <p className="text-sm">RAM</p>
+          </div>
+          <div className="flex flex-col items-center relative bottom-4 left-8">
+            <p className="flex items-center text-white justify-center bg-[#002743] rounded-full w-16 h-16 text-2xl font-bold">
+              60
+            </p>
+            <p className="text-sm">Stockage</p>
+          </div>
         </div>
-        <div>
-        <p className="flex items-center text-white justify-center bg-[#002743] rounded-full w-8 h-8">
-          40
-        </p>
-        <p className="">RAM</p>
-        </div>
-        <div>
-        <p className="flex items-center text-white justify-center bg-[#002743] rounded-full w-8 h-8">
-          60
-        </p>
-        <p className="">Stockage</p>
-        </div>
-      </div>
       </div>
       <div className="flex flex-col items-center">
-      <h1>Prix conseillé</h1>
-      <h2>{prix} €</h2>
+        <h2 className="font-bold text-3xl">Prix conseillé :</h2>
+        <h3 className="text-3xl">{prix} €</h3>
       </div>
     </div>
   );
