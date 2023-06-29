@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function PageConnexion({setIsLogged}) {
+export default function PageConnexion({ setIsLogged }) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,13 +10,12 @@ export default function PageConnexion({setIsLogged}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if ((userName === "admin") & (password === "nimda69")) {
-      setIsLogged(true)
-      navigate("/app/")
+      setIsLogged(true);
+      navigate("/app/");
     } else {
       alert("Mauvais login ou mot de passe");
     }
   };
-
 
   const handlePasswordChange = (e) => {
     e.preventDefault();

@@ -41,12 +41,15 @@ function App() {
     <LayoutMain setIsLogged={setIsLogged}>
       <Routes>
         {/* <Route path="/app/" element={<UsersMetierPage />} /> */}
-        <Route path="app" element={<Systeme setMarques={setMarques} os={os} setOs={setOs}/>}>
-          <Route
-            path="caracteristiques"
-            element={
-              <CaracteristiquesPage
-                marques={marques}
+        <Route
+          path="/app"
+          element={<Systeme setMarques={setMarques} os={os} setOs={setOs} />}
+        />
+        <Route
+          path="/app/caracteristiques"
+          element={
+            <CaracteristiquesPage
+              marques={marques}
               models={models}
               couleurs={couleurs}
               rams={rams}
@@ -64,22 +67,27 @@ function App() {
               setSelectedCouleur={setSelectedCouleur}
               setSelectedRam={setSelectedRam}
               setSelectedStockage={setSelectedStockage}
-              />
-            }
-          />
-          <Route path="model" element={<Model />} />
-          <Route path="systeme" element={<Systeme />} />
-          <Route path="faq" element={<FAQPage />} />
-          <Route path="ajoutstock" element={<AjoutStock
+            />
+          }
+        />
+        <Route path="/app/model" element={<Model />} />
+        <Route path="/app/systeme" element={<Systeme />} />
+        <Route path="/app/faq" element={<FAQPage />} />
+        <Route
+          path="/app/ajoutstock"
+          element={
+            <AjoutStock
               antutu={antutu}
               os={os}
               selectedMarque={selectedMarque}
               selectedModel={selectedModel}
               selectedCouleur={selectedCouleur}
               selectedRam={selectedRam}
-              selectedStockage={selectedStockage}/>} />
-          <Route path="*" element={<Page404 />} />
-        </Route>
+              selectedStockage={selectedStockage}
+            />
+          }
+        />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </LayoutMain>
   ) : (
