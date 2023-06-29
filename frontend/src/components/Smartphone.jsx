@@ -5,6 +5,7 @@ export default function SmartPhone({
   selectedRam,
   selectedStockage,
   os,
+  antutu,
 }) {
   return (
     <>
@@ -44,6 +45,13 @@ export default function SmartPhone({
             <p>
               <strong>Capacité de stockage : </strong>
               {selectedStockage} Go
+            </p>
+            <img src="/assets/images/yellow_check.svg" alt="Yellow Check" />
+          </div>
+          <div className="flex justify-between gap-4">
+            <p>
+              <strong>Score Antutu : </strong>
+              {antutu}
             </p>
             <img src="/assets/images/yellow_check.svg" alt="Yellow Check" />
           </div>

@@ -13,6 +13,7 @@ export default function Model({
   selectedRam,
   selectedStockage,
   os,
+  antutu,
 }) {
   const [step, setStep] = useState("etat");
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -48,6 +49,7 @@ export default function Model({
           selectedRam={selectedRam}
           selectedStockage={selectedStockage}
           os={os}
+          antutu={antutu}
         />
         {step === "etat" && <Etat />}
         {step !== "etat" && <MobileScore />}

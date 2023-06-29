@@ -48,6 +48,7 @@ export default function CaracteristiquesPage({
   const handleCouleurChange = (e) => {
     setSelectedCouleur(e.target.value);
     console.log(e.target.value);
+    console.log(antutu);
   };
 
   const handleRamsChange = (e) => {
@@ -100,12 +101,11 @@ export default function CaracteristiquesPage({
       phoneAPI.getStockage(selectedModel).then((stockage) => {
         setStockages(stockage);
       });
-  selectedModel !== "" &&
+    selectedModel !== "" &&
       phoneAPI.getAntutu(selectedModel).then((antutu) => {
-        setAntutu(antutu);
+        setAntutu(antutu[0].antutu);
       });
   }, [selectedModel]);
-  
 
   return (
     <>
