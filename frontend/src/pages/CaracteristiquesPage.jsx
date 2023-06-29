@@ -1,10 +1,104 @@
 import { useNavigate, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import * as phoneAPI from "../service/PhoneAPI.service";
 
-export default function CaracteristiquesPage() {
+export default function CaracteristiquesPage({
+  marques,
+  models,
+  couleurs,
+  rams,
+  stockages,
+  setStockages,
+  setModels,
+  setCouleurs,
+  setRams,
+  selectedMarque,
+  selectedModel,
+  setSelectedMarque,
+  setSelectedModel,
+  setSelectedCouleur,
+  setSelectedRam,
+  setSelectedStockage,
+}) {
   const navigate = useNavigate();
+
   const goBack = () => {
-    navigate(-1);
+    navigate("/app/");
   };
+
+  const handleMarqueChange = (e) => {
+    setSelectedMarque(e.target.value);
+    setModels([]);
+    setCouleurs([]);
+    setRams([]);
+    setStockages([]);
+    console.log(e.target.value);
+  };
+
+  const handleModelChange = (e) => {
+    setSelectedModel(e.target.value);
+    setCouleurs([]);
+    setRams([]);
+    setStockages([]);
+    console.log(e.target.value);
+  };
+
+  const handleCouleurChange = (e) => {
+    setSelectedCouleur(e.target.value);
+    console.log(e.target.value);
+  };
+
+  const handleRamsChange = (e) => {
+    e.preventDefault();
+    setSelectedRam(parseInt(e.target.innerText));
+    console.log(parseInt(e.target.innerText));
+
+    let buttonsRam = document.querySelectorAll(".ram.bg-red-200");
+    e.target.className =
+      "ram bg-red-200 px-1 mx-1 rounded font-medium w-16 h-8";
+
+    if (buttonsRam.length > 0) {
+      buttonsRam[0].className =
+        "ram bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8";
+    }
+  };
+
+  const handleStockagesChange = (e) => {
+    e.preventDefault();
+    setSelectedStockage(parseInt(e.target.innerText));
+    console.log(parseInt(e.target.innerText));
+
+    let buttonsStockage = document.querySelectorAll(".stockage.bg-red-200");
+    e.target.className =
+      "stockage bg-red-200 px-1 mx-1 rounded font-medium w-16 h-8";
+
+    if (buttonsStockage.length > 0) {
+      buttonsStockage[0].className =
+        "stockage bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8";
+    }
+  };
+
+  useEffect(() => {
+    selectedMarque !== "" &&
+      phoneAPI.getModel(selectedMarque).then((model) => {
+        setModels(model);
+      });
+  }, [selectedMarque]);
+
+  useEffect(() => {
+    selectedModel !== "" &&
+      phoneAPI.getCouleur(selectedModel).then((couleur) => {
+        setCouleurs(couleur);
+      });
+    selectedModel !== "" &&
+      phoneAPI.getRam(selectedModel).then((ram) => {
+        setRams(ram);
+      });
+    selectedModel !== "" &&
+      phoneAPI.getStockage(selectedModel).then((stockage) => {
+        setStockages(stockage);
+      });
+  }, [selectedModel]);
 
   return (
     <>
@@ -22,16 +116,17 @@ export default function CaracteristiquesPage() {
                   Marque
                 </label>
                 <select
+                  onChange={handleMarqueChange}
                   className="border-b-2 border-black"
                   name="Marques"
                   id="Marque"
                 >
                   <option value="">-- selectionner une marque --</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  {marques.map((marque, index) => (
+                    <option key={index} value={marque.marque}>
+                      {marque.marque}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div className="flex flex-col">
@@ -39,16 +134,17 @@ export default function CaracteristiquesPage() {
                   Modèle
                 </label>
                 <select
+                  onChange={handleModelChange}
                   className="border-b-2 border-black"
                   name="modeles"
                   id="modele"
                 >
                   <option value="">-- selectionner un modèle --</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  {models.map((model, index) => (
+                    <option key={index} value={model.model}>
+                      {model.model}
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -57,68 +153,47 @@ export default function CaracteristiquesPage() {
                   Couleur
                 </label>
                 <select
+                  onChange={handleCouleurChange}
                   className="border-b-2 border-black"
                   name="couleur"
                   id="couleur"
                 >
                   <option value="">-- selectionner une couleur --</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  {couleurs.map((couleur, index) => (
+                    <option key={index} value={couleur.couleur}>
+                      {couleur.couleur}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
             <div>
               <div className="flex flex-col justify-around items-center mt-10">
-                <p className="font-bold mb-2">Capacité de stockage</p>
-                <div>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8 mb-2">
-                    8 Go
-                  </button>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    16 Go
-                  </button>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    32 Go
-                  </button>
-                </div>
-                <div className="mb-10">
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    64 Go
-                  </button>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    128 Go
-                  </button>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    256 Go
-                  </button>
+                <p className="font-bold mb-2">Capacité de RAM</p>
+                <div className="mb-2">
+                  {rams.map((ram, index) => (
+                    <button
+                      onClick={handleRamsChange}
+                      key={index}
+                      className="ram bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8"
+                    >
+                      {ram.ram} Go
+                    </button>
+                  ))}
                 </div>
               </div>
               <div className="flex flex-col justify-around items-center ">
-                <p className="font-bold mb-2">Capacité de RAM</p>
-                <div>
-                  <button className="bg-gray-200 px-1 mx-1 mb-2 rounded font-medium w-16 h-8">
-                    2 Go
-                  </button>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    4 Go
-                  </button>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    6 Go
-                  </button>
-                </div>
-                <div className="mb-10">
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    8 Go
-                  </button>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    12 Go
-                  </button>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
-                    16 Go
-                  </button>
+                <p className="font-bold mb-2">Capacité de stockage</p>
+                <div className="mb-2">
+                  {stockages.map((stockage, index) => (
+                    <button
+                      onClick={handleStockagesChange}
+                      key={index}
+                      className="stockage bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8"
+                    >
+                      {stockage.stockage} Go
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>

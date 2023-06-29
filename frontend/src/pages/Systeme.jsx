@@ -1,15 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import * as phoneAPI from "../service/PhoneAPI.service";
 
-function Systeme() {
-  const [OS, setOS] = useState("");
+function Systeme({ setMarques }) {
+  const [os, setOs] = useState("");
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
   };
 
   const handleSelectionClick = () => {
-    setOS(document.querySelector("input[name=os]:checked").id);
+    setOs(document.querySelector("input[name=os]:checked").id);
   };
 
   const handleSubmit = (e) => {
@@ -18,8 +19,13 @@ function Systeme() {
   };
 
   useEffect(() => {
-    console.log(OS);
-  }, [OS]);
+    console.log(os);
+    if (os !== "") {
+      phoneAPI.getMarque(os).then((marque) => {
+        setMarques(marque);
+      });
+    }
+  }, [os]);
 
   return (
     <div className="flex flex-col gap-10">
@@ -36,10 +42,10 @@ function Systeme() {
               className="m-2"
               type="radio"
               name="os"
-              id="apple"
+              id="ios"
             />
             <div className="bg-[#00ACB0] bg-opacity-40 w-40 rounded-lg flex items-center justify-center gap-5 py-2">
-              <label htmlFor="apple">Apple</label>
+              <label htmlFor="ios">Apple</label>
               <img src="/assets/images/logo_apple.svg" alt="" />
             </div>
           </div>
