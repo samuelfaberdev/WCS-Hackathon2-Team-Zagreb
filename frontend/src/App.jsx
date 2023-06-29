@@ -28,7 +28,7 @@ function App() {
   const [rams, setRams] = useState([]);
   const [stockages, setStockages] = useState([]);
   const [os, setOs] = useState("");
-
+  const [antutu, setAntutu] = useState(12345);
   const [selectedMarque, setSelectedMarque] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const [selectedCouleur, setSelectedCouleur] = useState("");
@@ -56,12 +56,14 @@ function App() {
               couleurs={couleurs}
               rams={rams}
               stockages={stockages}
+              antutu={antutu}
               selectedMarque={selectedMarque}
               selectedModel={selectedModel}
               setModels={setModels}
               setCouleurs={setCouleurs}
               setRams={setRams}
               setStockages={setStockages}
+              setAntutu={setAntutu}
               setSelectedMarque={setSelectedMarque}
               setSelectedModel={setSelectedModel}
               setSelectedCouleur={setSelectedCouleur}
@@ -77,6 +79,7 @@ function App() {
           path="/app/ajoutstock"
           element={
             <AjoutStock
+              antutu={antutu}
               os={os}
               selectedMarque={selectedMarque}
               selectedModel={selectedModel}

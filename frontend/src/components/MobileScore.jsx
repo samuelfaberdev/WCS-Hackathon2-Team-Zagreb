@@ -1,10 +1,43 @@
 import { useEffect, useState } from "react";
 
-export default function MobileScore() {
+export default function MobileScore({ selectedRam, selectedStockage, antutu }) {
   const prix = 69; // quel calcul pour évaluer le prix ?
   let category = 2; // catégorie sera dynamique selon le prix
 
   const [scoreColor, setScoreColor] = useState("");
+  const [scoreRam, setScoreRam] = useState("");
+
+  useEffect(() => {
+    switch (selectedRam) {
+      case 1:
+        setScoreRam(30);
+        break;
+      case 2:
+        setScoreRam(40);
+        break;
+      case 3:
+        setScoreRam(50);
+        break;
+      case 4:
+        setScoreRam(60);
+        break;
+      case 6:
+        setScoreRam(80);
+        break;
+      case 8:
+        setScoreRam(100);
+        break;
+      case 12:
+        setScoreRam(140);
+        break;
+      case 16:
+        setScoreRam(180);
+        break;
+      default:
+        setScoreRam(0);
+    }
+    console.log(scoreRam);
+  }, [scoreRam]);
 
   useEffect(() => {
     switch (category) {
