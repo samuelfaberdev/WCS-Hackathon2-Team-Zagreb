@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as phoneAPI from "../service/PhoneAPI.service";
 
-function Systeme({ marques, setMarques }) {
+function Systeme({ setMarques }) {
   const [os, setOs] = useState("");
   const navigate = useNavigate();
   const goBack = () => {

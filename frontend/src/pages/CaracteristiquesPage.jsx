@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as phoneAPI from "../service/PhoneAPI.service";
 
 export default function CaracteristiquesPage({
@@ -11,24 +11,45 @@ export default function CaracteristiquesPage({
 }) {
   const navigate = useNavigate();
 
-  let selectedMarque = "";
+  const [selectedMarque, setSelectedMarque] = useState("");
+  const [selectedModel, setSelectedModel] = useState("");
+  const [selectedCouleur, setSelectedCouleur] = useState("");
 
   const goBack = () => {
     navigate("/app/");
   };
 
   const handleMarqueChange = (e) => {
-    selectedMarque = e.target.value;
-    console.log(selectedMarque);
+    setSelectedMarque(e.target.value);
+    setModels([]);
+    setCouleurs([]);
+    console.log(e.target.value);
+  };
+
+  const handleModelChange = (e) => {
+    setSelectedModel(e.target.value);
+    setCouleurs([]);
+    console.log(e.target.value);
+  };
+
+  const handleCouleurChange = (e) => {
+    setSelectedCouleur(e.target.value);
+    console.log(e.target.value);
   };
 
   useEffect(() => {
-    if (selectedMarque !== "") {
+    selectedMarque !== "" &&
       phoneAPI.getModel(selectedMarque).then((model) => {
-        console.log(model);
+        setModels(model);
       });
-    }
   }, [selectedMarque]);
+
+  useEffect(() => {
+    selectedModel !== "" &&
+      phoneAPI.getCouleur(selectedModel).then((couleur) => {
+        setCouleurs(couleur);
+      });
+  }, [selectedModel]);
 
   return (
     <>
@@ -64,16 +85,18 @@ export default function CaracteristiquesPage({
                   Modèle
                 </label>
                 <select
+                  onChange={handleModelChange}
                   className="border-b-2 border-black"
                   name="modeles"
                   id="modele"
                 >
                   <option value="">-- selectionner un modèle --</option>
-                  {models.map((model, index) => (
-                    <option key={index} value={model.model}>
-                      {model.model}
-                    </option>
-                  ))}
+                  {models !== [] &&
+                    models.map((model, index) => (
+                      <option key={index} value={model.model}>
+                        {model.model}
+                      </option>
+                    ))}
                 </select>
               </div>
 
@@ -82,6 +105,7 @@ export default function CaracteristiquesPage({
                   Couleur
                 </label>
                 <select
+                  onChange={handleCouleurChange}
                   className="border-b-2 border-black"
                   name="couleur"
                   id="couleur"
@@ -98,8 +122,8 @@ export default function CaracteristiquesPage({
             <div>
               <div className="flex flex-col justify-around items-center mt-10">
                 <p className="font-bold mb-2">Capacité de stockage</p>
-                <div>
-                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8 mb-2">
+                <div className="mb-2">
+                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
                     8 Go
                   </button>
                   <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
@@ -123,8 +147,8 @@ export default function CaracteristiquesPage({
               </div>
               <div className="flex flex-col justify-around items-center ">
                 <p className="font-bold mb-2">Capacité de RAM</p>
-                <div>
-                  <button className="bg-gray-200 px-1 mx-1 mb-2 rounded font-medium w-16 h-8">
+                <div className="mb-2">
+                  <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">
                     2 Go
                   </button>
                   <button className="bg-gray-200 px-1 mx-1 rounded font-medium w-16 h-8">

@@ -33,10 +33,7 @@ function App() {
     <LayoutMain>
       <Routes>
         {/* <Route path="/app/" element={<UsersMetierPage />} /> */}
-        <Route
-          path="/app/"
-          element={<Systeme marques={marques} setMarques={setMarques} />}
-        />
+        <Route path="/app/" element={<Systeme setMarques={setMarques} />} />
         <Route
           path="/app/caracteristiques"
           element={
