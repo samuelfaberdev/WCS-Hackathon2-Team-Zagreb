@@ -11,8 +11,8 @@ export default function SmartPhone({
         <img
           width="200"
           // src="/assets/images/phones/iphone_13.png"
-          src="/assets/images/phones/samsung_S23.png"
-          alt="Samsung Galaxy A50"
+          src={`/assets/images/phones/${selectedModel}.png`}
+          alt={`${selectedMarque} ${selectedModel}`}
         />
         <div className="flex flex-col gap-4 ml-8 w-full">
           <h2 className="font-bold text-3xl pb-7">
