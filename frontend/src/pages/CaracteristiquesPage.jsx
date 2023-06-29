@@ -14,7 +14,7 @@ export default function CaracteristiquesPage() {
             Quelles sont les caractéristiques du téléphone ?
           </h2>
         </div>
-        <form action="#">
+        <form>
           <div className="my-24 flex justify-around ">
             <div className="leading-[70px]">
               <div className="flex flex-col">

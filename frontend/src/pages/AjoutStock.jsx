@@ -12,7 +12,7 @@ export default function Model() {
 
   const nextStep = (e) => {
     e.preventDefault();
-    step === "etat" && setStep("prix");
+    step === "etat" && setStep("stocked");
     step === "prix" && popup();
     step === "stocked" && navigate("/app/");
     console.log(step);
@@ -46,7 +46,7 @@ export default function Model() {
             </button>
           )}
 
-          {step === "stocked" && (
+          {/* {step === "stocked" && (
             <div className="flex gap-2 items-center justify-center">
               <img
                 src="/assets/images/yellow_check.svg"
@@ -54,7 +54,7 @@ export default function Model() {
               />
               <p>Ce téléphone est ajouté au stock</p>
             </div>
-          )}
+          )} */}
           <button
             onClick={nextStep}
             className="bg-[#00acb0] px-8 py-3 rounded-full text-white font-bold text-lg"
