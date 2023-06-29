@@ -25,8 +25,15 @@ function App() {
   const [marques, setMarques] = useState([]);
   const [models, setModels] = useState([]);
   const [couleurs, setCouleurs] = useState([]);
-  const  [rams, setRams] = useState([]);
+  const [rams, setRams] = useState([]);
   const [stockages, setStockages] = useState([]);
+
+  const [selectedMarque, setSelectedMarque] = useState("");
+  const [selectedModel, setSelectedModel] = useState("");
+  const [selectedCouleur, setSelectedCouleur] = useState("");
+  const [selectedRam, setSelectedRam] = useState("");
+  const [selectedStockage, setSelectedStockage] = useState("");
+
   const location = useLocation();
   const isLogged = location.pathname.startsWith("/app");
 
@@ -42,20 +49,38 @@ function App() {
             <CaracteristiquesPage
               marques={marques}
               models={models}
-              setModels={setModels}
               couleurs={couleurs}
-              setCouleurs={setCouleurs}
               rams={rams}
-              setRams={setRams}
               stockages={stockages}
+              selectedMarque={selectedMarque}
+              selectedModel={selectedModel}
+              setModels={setModels}
+              setCouleurs={setCouleurs}
+              setRams={setRams}
               setStockages={setStockages}
+              setSelectedMarque={setSelectedMarque}
+              setSelectedModel={setSelectedModel}
+              setSelectedCouleur={setSelectedCouleur}
+              setSelectedRam={setSelectedRam}
+              setSelectedStockage={setSelectedStockage}
             />
           }
         />
         <Route path="/app/model" element={<Model />} />
         <Route path="/app/systeme" element={<Systeme />} />
         <Route path="/app/faq" element={<FAQPage />} />
-        <Route path="/app/ajoutstock" element={<AjoutStock />} />
+        <Route
+          path="/app/ajoutstock"
+          element={
+            <AjoutStock
+              selectedMarque={selectedMarque}
+              selectedModel={selectedModel}
+              selectedCouleur={selectedCouleur}
+              selectedRam={selectedRam}
+              selectedStockage={selectedStockage}
+            />
+          }
+        />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </LayoutMain>
