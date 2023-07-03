@@ -4,11 +4,16 @@
   "description": "## Team",
   "main": "index.js",
   "scripts": {
+    "dev": "concurrently \"cd ./frontend/ && npm run dev\" \"cd ./backend/ && npm run dev\"",
     "front": "cd ./frontend/ && npm run dev",
     "back": "cd ./backend/ && npm run dev",
+    "initprojet": "concurrently \"cd ./frontend/ && npm i\" \"cd ./backend/ && npm i\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
 }
