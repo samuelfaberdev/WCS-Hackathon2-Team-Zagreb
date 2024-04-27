@@ -1,6 +1,6 @@
-import { useNavigate, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import * as phoneAPI from "../service/PhoneAPI.service";
+import * as phoneAPI from "@services/PhoneAPI.service";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function CaracteristiquesPage({
   marques,
