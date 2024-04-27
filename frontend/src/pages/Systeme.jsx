@@ -1,4 +1,4 @@
-import * as phoneAPI from "@service/PhoneAPI.service";
+import * as phoneAPI from "@services/PhoneAPI.service";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
