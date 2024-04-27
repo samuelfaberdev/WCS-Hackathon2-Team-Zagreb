@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Etat from "@components/Etat";
 import MobileScore from "@components/MobileScore";
 import Popup from "@components/Popup";
-import SmartPhone from "@components/SmartPhone";
+import SmartPhone from "@components/Smartphone";
 
 export default function Model({
   selectedMarque,
