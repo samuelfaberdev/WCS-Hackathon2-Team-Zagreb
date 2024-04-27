@@ -1,5 +1,6 @@
+const path = require("path");
 import react from "@vitejs/plugin-react";
-import path from "path";
+
 import { defineConfig } from "vite";
 
 const __filename = new URL(import.meta.url).pathname;
