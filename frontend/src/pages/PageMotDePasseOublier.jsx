@@ -27,8 +27,8 @@ export default function PageMotDePasseOublier() {
                   placeholder="Adresse mail"
                   className="bg-transparent font-bold text-xl w-96 border-solid border-b-2 border-[#002743] focus:outline-none mt-5"
                   type="email"
-                  minlength="4"
-                  maxlength="30"
+                  minLength="4"
+                  maxLength="30"
                 />
               </div>
               <div className="flex justify-center pt-12">

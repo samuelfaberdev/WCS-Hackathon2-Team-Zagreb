@@ -21,8 +21,8 @@ export default function PageNouveauMotDePasse() {
                   placeholder="Nouveau mot de passe"
                   className="bg-transparent font-bold text-xl w-96 border-solid border-b-2 border-[#002743] focus:outline-none mt-5"
                   type="password"
-                  minlength="4"
-                  maxlength="20"
+                  minLength="4"
+                  maxLength="20"
                 />
               </div>
               <div className="flex items-center flex-col mt-8">
@@ -30,8 +30,8 @@ export default function PageNouveauMotDePasse() {
                   placeholder="Validation du nouveau mot de passe"
                   className="bg-transparent font-bold text-xl w-96 border-solid border-b-2 border-[#002743] focus:outline-none mt-5"
                   type="password"
-                  minlength="4"
-                  maxlength="20"
+                  minLength="4"
+                  maxLength="20"
                 />
               </div>
               <div className="flex justify-center pt-12">

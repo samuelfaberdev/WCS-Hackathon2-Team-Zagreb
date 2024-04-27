@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function PageConnexion({ setIsLogged }) {
   const [userName, setUserName] = useState("");
@@ -9,7 +9,7 @@ export default function PageConnexion({ setIsLogged }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if ((userName === "admin") & (password === "nimda69")) {
+    if ((userName === "admin") & (password === "admin")) {
       setIsLogged(true);
       navigate("/app/");
     } else {

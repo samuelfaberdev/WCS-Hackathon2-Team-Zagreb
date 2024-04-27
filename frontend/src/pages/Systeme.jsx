@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import * as phoneAPI from "@service/PhoneAPI.service";
 import { useEffect } from "react";
-import * as phoneAPI from "../service/PhoneAPI.service";
+import { useNavigate } from "react-router-dom";
 
 function Systeme({ setMarques, os, setOs }) {
   const navigate = useNavigate();

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import MobileScore from "../components/MobileScore";
-import Popup from "../components/Popup";
-import SmartPhone from "../components/SmartPhone";
-import Etat from "../components/Etat";
+import Etat from "@components/Etat";
+import MobileScore from "@components/MobileScore";
+import Popup from "@components/Popup";
+import SmartPhone from "@components/SmartPhone";
 
 export default function Model({
   selectedMarque,
