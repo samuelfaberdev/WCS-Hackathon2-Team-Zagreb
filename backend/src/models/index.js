@@ -14,7 +14,7 @@ const pool = mysql.createPool({
   database: DB_NAME,
 });
 
-// try a connection
+// // try a connection
 
 pool.getConnection().catch(() => {
   console.warn(
