@@ -1,0 +1,60 @@
+services:
+  database:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "harry"
+      MYSQL_PASSWORD: "potter"
+      MYSQL_ROOT_PASSWORD: "password"
+    expose:
+      - 3306
+    volumes:
+      - my-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
+
+  frontend:
+    build: ./frontend
+    command: sh -c "npm run build"
+    volumes:
+      - web-client-build:/app/dist
+
+  backend:
+    depends_on:
+      database:
+        condition: service_healthy
+        restart: true
+    build: ./backend
+    command: sh -c "npm run migrate && npm run start"
+    expose:
+      - 5000
+    environment:
+      APP_PORT: "5000"
+      DB_HOST: "database"
+      DB_PORT: "3306"
+      DB_USER: "harry"
+      DB_PASSWORD: "potter"
+      DB_NAME: "test"
+    volumes:
+      - ./backend/src/:/app/src/
+
+  nginx:
+    image: nginx:1.21.3
+    depends_on:
+      frontend:
+        condition: service_started
+      backend:
+        condition: service_started
+    restart: always
+    ports:
+      - ${GATEWAY_PORT:-8000}:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - web-client-build:/web-client-build
+      - ./logs:/var/log/nginx
+volumes:
+  web-client-build:
+  my-db:
