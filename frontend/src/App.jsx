@@ -1,25 +1,22 @@
-import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 // import des layouts
-import LayoutMain from "./layouts/LayoutMain";
 import LayoutConnect from "./layouts/LayoutConnect";
+import LayoutMain from "./layouts/LayoutMain";
 // import des pages
 import PageConnexion from "./pages/PageConnexion";
 // import UsersMetierPage from "./pages/UsersMetierPage";
-import PageMotDePasseOublier from "./pages/PageMotDePasseOublier";
-import CaracteristiquesPage from "./pages/CaracteristiquesPage";
-import PageNouveauMotDePasse from "./pages/PageNouveauMotDePasse";
-import Model from "./pages/Model";
-import Systeme from "./pages/Systeme";
-import FAQPage from "./pages/FAQPage";
 import AjoutStock from "./pages/AjoutStock";
+import CaracteristiquesPage from "./pages/CaracteristiquesPage";
+import FAQPage from "./pages/FAQPage";
+import Model from "./pages/Model";
+import PageMotDePasseOublier from "./pages/PageMotDePasseOublier";
+import PageNouveauMotDePasse from "./pages/PageNouveauMotDePasse";
+import Systeme from "./pages/Systeme";
 // import des composants
 // import de la 404
 import Page404 from "./pages/Page404";
-
-// import du CSS
-import "./App.css";
 
 function App() {
   const [marques, setMarques] = useState([]);
