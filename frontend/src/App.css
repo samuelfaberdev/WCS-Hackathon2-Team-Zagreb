@@ -8,12 +8,10 @@ body {
   box-sizing: border-box;
 }
 
-
-
 @font-face {
   /* Font de test à voir si on change pour celle du Figma */
   font-family: "Raleway";
-  src: url("/fonts/Raleway-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/Raleway-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -38,10 +36,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-.popup-inner{
+.popup-inner {
   padding: 32px;
   width: 100%;
   max-width: 640px;
   background-color: #fff;
 }
-
